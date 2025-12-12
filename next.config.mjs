@@ -2,15 +2,15 @@
 const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
-  output: 'export',    // ключ для статичного експорту Next.js 13–15
+  output: 'export', // потрібно для next export
   typescript: {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true, // потрібно для next export
+    unoptimized: true, // потрібно для GitHub Pages
   },
 
-  // GitHub Pages потребує basePath + assetPrefix
+  // Підтримка GitHub Pages
   basePath: isProd ? '/v0-the-bvrly-website' : '',
   assetPrefix: isProd ? '/v0-the-bvrly-website/' : '',
 };
